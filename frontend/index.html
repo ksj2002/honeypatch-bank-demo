@@ -1,13 +1,51 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <title>로그인</title>
-  <link rel="stylesheet" href="css/login.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HoneyBank | 관리자 로그인</title>
+  <link rel="stylesheet" href="css/login.css" />
+  <script src="js/config.js" defer></script>
+  <script src="js/login.js" defer></script>
 </head>
 <body>
-  <!-- 프론트 A가 여기를 채운다 -->
-  <script src="js/config.js"></script>
-  <script src="js/login.js"></script>
+  <main class="layout">
+    <section class="intro" aria-label="서비스 소개">
+      <div class="brand"><span class="brand-mark">H</span> HoneyBank <span class="demo-tag">SECURITY DEMO</span></div>
+      <div class="intro-content">
+        <span class="eyebrow">HONEY-PATCHES PROJECT</span>
+        <h1>같은 로그인,<br />서로 다른 보안 대응.</h1>
+        <p>취약한 로그인, 일반 패치, 허니 패치의 차이를 직접 확인하는 가상 은행 보안 데모입니다.</p>
+        <div class="steps"><span>01 모드 선택</span><span>02 로그인 테스트</span><span>03 결과 비교</span></div>
+      </div>
+      <p class="intro-foot">교육 및 실험용 시스템 · 실제 금융 서비스가 아닙니다.</p>
+    </section>
+
+    <section class="workspace" aria-label="관리자 로그인">
+      <div class="panel">
+        <div class="panel-heading"><span class="overline">ADMIN PORTAL</span><h2>관리자 로그인</h2><p>테스트 계정으로 로그인하거나 입력에 따른 보안 동작을 확인하세요.</p></div>
+        <form id="loginForm" novalidate>
+          <label for="loginId">아이디</label>
+          <input id="loginId" name="id" type="text" autocomplete="username" placeholder="아이디 입력" required />
+          <label for="loginPassword">비밀번호</label>
+          <input id="loginPassword" name="password" type="password" autocomplete="current-password" placeholder="비밀번호 입력" required />
+          <button id="loginButton" class="primary-button" type="submit">로그인</button>
+          <p id="loginMessage" class="message" role="status" aria-live="polite"></p>
+        </form>
+        <div class="test-account">테스트 계정 <strong>admin</strong> / <strong>admin1234</strong></div>
+      </div>
+
+      <div class="panel mode-panel">
+        <div class="mode-title"><div><span class="overline">SECURITY MODE</span><h3>보안 모드 선택</h3></div><span id="currentMode" class="current-mode">조회 중</span></div>
+        <p class="mode-hint">모드를 선택하면 서버 설정이 변경됩니다. 이미 로그인했다면 로그아웃 후 다시 테스트하세요.</p>
+        <div class="mode-options" role="group" aria-label="보안 모드">
+          <button class="mode-option" type="button" data-mode="VULNERABLE"><span class="mode-option-head"><strong>VULNERABLE</strong><span class="mode-dot"></span></span><small>취약 모드 · 공격 입력 허용</small></button>
+          <button class="mode-option" type="button" data-mode="PATCHED"><span class="mode-option-head"><strong>PATCHED</strong><span class="mode-dot"></span></span><small>일반 패치 · 공격 입력 차단</small></button>
+          <button class="mode-option" type="button" data-mode="HONEY"><span class="mode-option-head"><strong>HONEY</strong><span class="mode-dot"></span></span><small>허니 패치 · 가짜 관리자 세션</small></button>
+        </div>
+        <p id="modeMessage" class="message" role="status" aria-live="polite"></p>
+      </div>
+    </section>
+  </main>
 </body>
 </html>
