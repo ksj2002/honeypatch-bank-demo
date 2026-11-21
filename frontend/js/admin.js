@@ -1,14 +1,3 @@
-// 백엔드 고객 목록 API가 준비되면 false로 바꾸고 MOCK_RESPONSE를 지운다.
-const USE_MOCK = true;
-
-// docs/api.md 5번 응답 예시 그대로
-const MOCK_RESPONSE = {
-  customers: [
-    { id: 1, name: "홍길동", balance: 1500000 },
-    { id: 2, name: "김영희", balance: 320000 }
-  ]
-};
-
 const statusEl = document.getElementById("status");
 const tbody = document.getElementById("customer-body");
 
@@ -45,11 +34,6 @@ function renderCustomers(customers) {
 }
 
 async function loadCustomers() {
-  if (USE_MOCK) {
-    renderCustomers(MOCK_RESPONSE.customers);
-    return;
-  }
-
   try {
     const res = await fetch(`${API_BASE}/api/admin/customers`, {
       credentials: "include"
