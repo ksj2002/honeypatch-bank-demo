@@ -1,0 +1,80 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
+  background: #f4f6f9;
+  color: #222;
+}
+
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 32px;
+  background: #1f3a68;
+  color: #fff;
+}
+
+.admin-header h1 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.logout-btn {
+  padding: 8px 16px;
+  border: 1px solid #fff;
+  border-radius: 4px;
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+}
+
+.logout-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.container {
+  max-width: 720px;
+  margin: 40px auto;
+  padding: 0 16px;
+}
+
+.status {
+  min-height: 1.4em;
+  color: #666;
+}
+
+.status.error {
+  color: #c0392b;
+}
+
+.customer-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.customer-table th,
+.customer-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #e3e6eb;
+  text-align: left;
+}
+
+.customer-table th {
+  background: #eef1f6;
+  font-weight: 600;
+}
+
+.customer-table tbody tr:nth-child(even) {
+  background: #fafbfc;
+}
+
+.customer-table th:last-child,
+.customer-table td:last-child {
+  text-align: right;
+}

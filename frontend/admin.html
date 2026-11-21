@@ -2,12 +2,31 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>관리자</title>
-  <link rel="stylesheet" href="css/login.css">
+  <link rel="stylesheet" href="css/admin.css">
 </head>
 <body>
-  <!-- 프론트 A가 여기를 채운다 -->
+  <header class="admin-header">
+    <h1>고객 관리</h1>
+    <button type="button" id="logout-btn" class="logout-btn">로그아웃</button>
+  </header>
+
+  <main class="container">
+    <p id="status" class="status">불러오는 중...</p>
+    <table class="customer-table">
+      <thead>
+        <tr>
+          <th>번호</th>
+          <th>이름</th>
+          <th>잔액</th>
+        </tr>
+      </thead>
+      <tbody id="customer-body"></tbody>
+    </table>
+  </main>
+
   <script src="js/config.js"></script>
-  <script src="js/login.js"></script>
+  <script src="js/admin.js"></script>
 </body>
 </html>
