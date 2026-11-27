@@ -85,7 +85,9 @@ public class InjectionFilter extends OncePerRequestFilter {
             return Decision.PASS;
         }
 
-        boolean attack = detector.isInjection(req.id()) || detector.isInjection(req.password());
+        String id = req.id() == null ? "" : req.id();
+        String pw = req.password() == null ? "" : req.password();
+        boolean attack = detector.isInjection(id) || detector.isInjection(pw) || detector.isInjection(id + " " + pw);
         if (!attack) {
             return Decision.PASS;
         }
